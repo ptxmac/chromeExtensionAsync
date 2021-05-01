@@ -5953,6 +5953,12 @@ declare namespace chrome.tabs {
          * @since Chrome 31.
          */
         sessionId?: string;
+
+        /**
+         * Optional. The ID of the group that the tabs are in, or tabGroups.TAB_GROUP_ID_NONE for ungrouped tabs.
+         * @since Chrome 88.
+         */
+        groupId?: number
     }
 
     /**
@@ -6280,6 +6286,8 @@ declare namespace chrome.tabs {
 
     interface TabZoomChangeEvent extends chrome.events.Event<(ZoomChangeInfo: ZoomChangeInfo) => void> { }
 
+
+
     /**
      * Injects JavaScript code into a page. For details, see the programmatic injection section of the content scripts doc.
      * @param details Details of the script or CSS to inject. Either the code or the file property must be set, but both may not be set at the same time.
@@ -6536,6 +6544,13 @@ declare namespace chrome.tabs {
      */
     export function getZoomSettings(tabId: number, callback?: (zoomSettings: ZoomSettings) => void): Promise<ZoomSettings>;
 
+    interface GroupData {
+        groupId?: number;
+        tabIds: number | number[];
+    }
+
+    export function group(options: GroupData ): Promise<number>;
+    
     /**
      * Fired when the highlighted or selected tabs in a window changes.
      * @since Chrome 18.

@@ -63,7 +63,7 @@
         }
     }
 
-    /** Promisify all the known functions in the map 
+    /** Promisify all the known functions in the map
      * @param {object} api The Chrome native API to extend
      * @param {Array} apiMap Collection of sub-API and functions to promisify */
     function applyMap(api, apiMap) {
@@ -215,7 +215,7 @@
                 'create','update','setPaused','setKeepAlive','setNoDelay','connect',
                 'disconnect','secure','send','close','getInfo','getSockets'] },
             { n: 'tcpServer', props: [
-                'create','update','setPaused','listen','disconnect','close','getInfo','getSockets'] }, 
+                'create','update','setPaused','listen','disconnect','close','getInfo','getSockets'] },
             { n: 'udp', props: [
                 'create','update','setPaused','bind','send','close','getInfo',
                 'getSockets','joinGroup','leaveGroup','setMulticastTimeToLive',
@@ -230,7 +230,7 @@
             'query', 'highlight', 'update', 'move', 'reload', 'remove',
             'detectLanguage', 'captureVisibleTab', 'executeScript',
             'insertCSS', 'setZoom', 'getZoom', 'setZoomSettings',
-            'getZoomSettings', 'discard'],
+            'getZoomSettings', 'discard', 'group'],
         topSites: ['get'],
         tts: ['isSpeaking', 'getVoices', 'speak'],
         types: ['set', 'get', 'clear'],
