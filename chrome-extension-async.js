@@ -225,6 +225,7 @@
             { n: 'memory', props: ['getInfo'] },
             { n: 'storage', props: ['getInfo', 'ejectDevice', 'getAvailableCapacity'] }],
         tabCapture: ['capture', 'getCapturedTabs'],
+        // tabGroups: ['get'],
         tabs: [
             'get', 'getCurrent', 'sendMessage', 'create', 'duplicate',
             'query', 'highlight', 'update', 'move', 'reload', 'remove',

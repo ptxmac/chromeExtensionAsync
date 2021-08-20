@@ -534,6 +534,12 @@ declare namespace chrome.browserAction {
     var onClicked: BrowserClickedEvent;
 }
 
+declare namespace chrome.action {
+    interface ActionClickedEvent extends chrome.events.Event<(tab: chrome.tabs.Tab) => void> { }
+
+    var onClicked: ActionClickedEvent;
+}
+
 ////////////////////
 // Browsing Data
 ////////////////////
@@ -6550,7 +6556,7 @@ declare namespace chrome.tabs {
     }
 
     export function group(options: GroupData ): Promise<number>;
-    
+
     /**
      * Fired when the highlighted or selected tabs in a window changes.
      * @since Chrome 18.
@@ -6600,6 +6606,21 @@ declare namespace chrome.tabs {
      * @since Chrome 38.
      */
     var onZoomChange: TabZoomChangeEvent;
+}
+
+// Tab Groups
+declare namespace chrome.tabGroups {
+    interface TabGroup {
+        title?: string;
+    }
+
+    interface UpdateProperties {
+        title?: string;
+    }
+
+    export function get(groupId: number) : Promise<TabGroup>;
+
+    export function update(groupId: number, updateProperties: UpdateProperties) : Promise<TabGroup>;
 }
 
 ////////////////////
