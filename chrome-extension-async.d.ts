@@ -6612,10 +6612,14 @@ declare namespace chrome.tabs {
 declare namespace chrome.tabGroups {
     interface TabGroup {
         title?: string;
+
+        color: string;
     }
 
     interface UpdateProperties {
         title?: string;
+
+        color?: string;
     }
 
     export function get(groupId: number) : Promise<TabGroup>;
